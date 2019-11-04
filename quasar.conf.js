@@ -43,7 +43,12 @@ module.exports = function(ctx) {
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ["Loading", "Meta"],
+      config: {
+        loading: {
+          /* Loading defaults */
+        }
+      }
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -52,7 +57,7 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: "history",
       // showProgress: false,
       // gzip: true,
       // analyze: true,
@@ -80,9 +85,9 @@ module.exports = function(ctx) {
       open: true // opens browser window automatically
     },
 
-    // animations: 'all', // --- includes all animations
+    animations: "all", // --- includes all animations
+    // animations: ["fadeIn", "fadeOut"],
     // https://quasar.dev/options/animations
-    animations: [],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {

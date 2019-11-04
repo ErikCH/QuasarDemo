@@ -1,10 +1,15 @@
 const routes = [
   {
     path: "/",
-    component: () => import("layouts/MyLayout.vue"),
+    component: () => import("layouts/search.vue"),
     children: [
-      { path: "", component: () => import("pages/Index.vue") },
-      { path: "/erik", component: () => import("pages/Erik.vue") }
+      { path: "", component: () => import("pages/Erik.vue") },
+      { path: "/erik", component: () => import("pages/Erik.vue") },
+      {
+        path: "/profile/:id",
+        name: "profile",
+        component: () => import("pages/profile.vue")
+      }
     ]
   }
 ];
