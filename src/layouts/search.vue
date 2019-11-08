@@ -5,6 +5,8 @@
     <!-- (Optional) The Header -->
     <q-header elevated>
       <q-toolbar class="row justify-start">
+        <q-btn flat round dense icon="menu" class="lt-xs" />
+
         <q-toolbar-title>Breaking Bad Info</q-toolbar-title>
         <q-tabs v-model="tab">
           <q-route-tab
@@ -17,6 +19,7 @@
             label="Jesse Pinkman"
             :to="{ name: 'profile', params: { id: 2 } }"
           />
+          <q-route-tab name="search" label="Search" :to="{ name: 'search' }" />
           <q-route-tab
             name="random"
             label="Random"
@@ -41,7 +44,8 @@ export default {
   },
   data() {
     return {
-      leftDrawer: false
+      leftDrawer: false,
+      tab: ""
     };
   }
 };
